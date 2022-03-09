@@ -8,12 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
+        
+        NetworkManager.share.getTopStories { newsData in
+            
+            for x in 0...10 {
+                NetworkManager.share.getItem(item: newsData?[x] ?? 0) { itemData in
+                    print(itemData?.title ?? "-- No Title --", itemData?.id ?? "-- NO ID --")
+                }
+            }
+            
+        }
     }
-
-
+    
+    
 }
 
