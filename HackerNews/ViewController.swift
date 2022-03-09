@@ -9,21 +9,31 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    lazy var hackerNewsList: NewsListView = {
+        let v = NewsListView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        NetworkManager.share.getTopStories { newsData in
-            
-            for x in 0...10 {
-                NetworkManager.share.getItem(item: newsData?[x] ?? 0) { itemData in
-                    print(itemData?.title ?? "-- No Title --", itemData?.id ?? "-- NO ID --")
-                }
-            }
-            
-        }
+        setupView()
     }
     
+    func setupView() {
+        view.addSubview(hackerNewsList)
+        setupContraints()
+    }
+    
+    func setupContraints() {
+        NSLayoutConstraint.activate([
+            hackerNewsList.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hackerNewsList.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hackerNewsList.topAnchor.constraint(equalTo: view.topAnchor),
+            hackerNewsList.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
     
 }
 

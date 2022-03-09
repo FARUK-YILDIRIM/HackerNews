@@ -15,4 +15,5 @@ struct Item: Decodable {
     let title: String
     let type: String
     let url: String
+    let by: String
 }
