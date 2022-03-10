@@ -14,6 +14,6 @@ struct Item: Decodable {
     let time: Int
     let title: String
     let type: String
-    let url: String
+    let url: URL
     let by: String
 }

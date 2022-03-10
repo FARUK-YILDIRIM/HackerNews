@@ -65,6 +65,10 @@ extension NewsListView: HackerNewsListViewModelDelegate {
 
 extension NewsListView: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
     }
@@ -72,6 +76,11 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.reuseID, for: indexPath) as? NewsTableViewCell
         cell?.titleLabel.text = viewModel.title(at: indexPath.row)
+        cell?.urlLabel.text = viewModel.urlLabel(at: indexPath.row)
+        cell?.scoreLabel.text = "\(String(viewModel.scoreLabel(at: indexPath.row))) points"
+        cell?.authorLabel.text = "by \(viewModel.authorLabel(at: indexPath.row))"
+        cell?.timeLabel.text = "\(viewModel.timeLabel(at: indexPath.row))"
+
         return cell ?? UITableViewCell()
     }
     
