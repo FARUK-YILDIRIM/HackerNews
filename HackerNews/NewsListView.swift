@@ -31,6 +31,12 @@ class NewsListView: UIView {
         return v
     }()
     
+    var activityIndicator: UIActivityIndicatorView = {
+        let v = UIActivityIndicatorView(style: .large)
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
     init() {
         super.init(frame: .zero)
         //self.viewModel.fetchNews()
@@ -44,8 +50,10 @@ class NewsListView: UIView {
     
     func setupView() {
         addSubview(tableView)
+        addSubview(activityIndicator)
         
         setupConstraints()
+        activityIndicator.startAnimating()
     }
     
     func setupConstraints() {
@@ -56,6 +64,9 @@ class NewsListView: UIView {
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+        
+        activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 }
 
@@ -64,7 +75,8 @@ extension NewsListView: HackerNewsListViewModelDelegate {
     func fetchNewsDelegate() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
+            self.activityIndicator.stopAnimating()
+        }     
     }
 }
 
