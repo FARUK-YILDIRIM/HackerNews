@@ -27,7 +27,7 @@ class NewsListView: UIView {
     
     init() {
         super.init(frame: .zero)
-        self.viewModel.fetchNews()
+        //self.viewModel.fetchNews()
         setupView()
     }
     
@@ -66,7 +66,7 @@ extension NewsListView: HackerNewsListViewModelDelegate {
 extension NewsListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 110
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -48,8 +48,8 @@ class HackerNewsListViewModel {
         return setTimestamp(epochTime: time)
     }
     
-    func getNews(completion: @escaping ([Any]) -> Void){
-        NetworkManager.share.getTopStories { news in
+    func getNews(endpoint: String, completion: @escaping ([Any]) -> Void){
+        NetworkManager.share.getNews(endpoint: endpoint) { news in
             guard let news = news else { return }
             DispatchQueue.main.async {
                 completion(news)
@@ -69,8 +69,8 @@ class HackerNewsListViewModel {
     }
     
     
-    func fetchNews() {
-        self.getNews { news in
+    func fetchNews(endpoint: String) {
+        self.getNews(endpoint: endpoint) { news in
             let count = news.count
             //for x in 0...count - 1 {
             for x in 0...25 {

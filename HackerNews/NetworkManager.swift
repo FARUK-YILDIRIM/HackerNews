@@ -7,17 +7,15 @@
 
 import Foundation
 
-import Foundation
-
-class NetworkManager {
+final class NetworkManager {
 
     static let share = NetworkManager()
     private let endpoint = EndPoint()
     private init() {}
     
     
-    func getTopStories (completion: @escaping ([Int]?) -> Void) {
-        let urlString = endpoint.topStories
+    func getNews (endpoint: String, completion: @escaping ([Int]?) -> Void) {
+        let urlString = endpoint
         guard let url = URL (string: urlString) else {
             return
         }
