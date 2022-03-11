@@ -35,6 +35,10 @@ class HackerNewsListViewModel {
         return String(describing: url!) 
     }
     
+    func urlFull(at index: Int) -> String {
+        return "\(news[index].url)"
+    }
+    
     func scoreLabel(at index: Int) -> Int {
         return news[index].score
     }

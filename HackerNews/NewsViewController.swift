@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class NewsViewController: UIViewController {
   
@@ -15,6 +16,7 @@ class NewsViewController: UIViewController {
     lazy var hackerNewsList: NewsListView = {
         let v = NewsListView()
         v.translatesAutoresizingMaskIntoConstraints = false
+        v.delegate = self
         return v
     }()
     
@@ -56,3 +58,16 @@ class NewsViewController: UIViewController {
     
 }
 
+
+extension NewsViewController: TabDelegate {
+    func didButtonTapped(url: String) {
+        DispatchQueue.main.async {
+            let config = SFSafariViewController.Configuration()
+            let safariViewController = SFSafariViewController(url: URL(string: url)!, configuration: config)
+            safariViewController.modalTransitionStyle = .flipHorizontal
+            
+            self.present(safariViewController, animated: true)
+        }
+        
+    }
+}

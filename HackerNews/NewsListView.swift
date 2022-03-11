@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol TabDelegate {
+    func didButtonTapped(url: String)
+}
+
 class NewsListView: UIView {
 
+    var delegate: TabDelegate?
+    
     lazy var viewModel: HackerNewsListViewModel = {
         let viewModel = HackerNewsListViewModel()
         viewModel.delegate = self
@@ -82,7 +88,16 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
         cell?.timeLabel.text = "\(viewModel.timeLabel(at: indexPath.row))"
 
         return cell ?? UITableViewCell()
+        
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news  = viewModel.urlFull(at: indexPath.row)
+        guard URL(string: news) != nil else {
+            return
+        }
+        
+        delegate?.didButtonTapped(url: news)
+    }
    
 }
