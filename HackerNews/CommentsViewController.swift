@@ -20,26 +20,33 @@ class CommentsViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100.0;
+        
         view = tableView
-
     }
 
 }
 
 extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.newsTitle
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = CommentsTableViewCell()
         let item = self.comments[indexPath.row]
         
         NetworkManager.share.getComment(item: item){ item in
             guard let item = item else { return }
             DispatchQueue.main.async {
-               cell.textLabel?.text = item.text.trimHTMLTags()
+                cell.authorLabel.text = "by \(item.by)"
+                cell.commentLabel.text = item.text.trimHTMLTags()
             }
         }
         

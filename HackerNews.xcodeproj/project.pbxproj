@@ -21,6 +21,7 @@
 		038A5ED727D8FB78003F782D /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A5ED627D8FB78003F782D /* NewsListView.swift */; };
 		03B32D3127DF101100E7A83F /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B32D3027DF101100E7A83F /* CommentsViewController.swift */; };
 		03B32D3527DF236000E7A83F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B32D3427DF236000E7A83F /* Comment.swift */; };
+		03B32D3727DF37C300E7A83F /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B32D3627DF37C300E7A83F /* CommentsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		038A5ED627D8FB78003F782D /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		03B32D3027DF101100E7A83F /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		03B32D3427DF236000E7A83F /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		03B32D3627DF37C300E7A83F /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				038A5ED427D8F261003F782D /* NewsTableViewCell.swift */,
 				038A5ED627D8FB78003F782D /* NewsListView.swift */,
+				03B32D3627DF37C300E7A83F /* CommentsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				034A1DB427D2234800CEE057 /* SceneDelegate.swift in Sources */,
 				034F804827DA7C6200E429F1 /* TabBarViewController.swift in Sources */,
 				038A5ED527D8F261003F782D /* NewsTableViewCell.swift in Sources */,
+				03B32D3727DF37C300E7A83F /* CommentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

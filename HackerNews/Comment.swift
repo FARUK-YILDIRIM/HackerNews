@@ -10,4 +10,5 @@ import Foundation
 
 struct Comment: Decodable {
     let text: String
+    let by: String
 }
