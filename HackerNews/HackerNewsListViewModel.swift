@@ -39,8 +39,8 @@ class HackerNewsListViewModel {
         return "\(news[index].url)"
     }
     
-    func scoreLabel(at index: Int) -> Int {
-        return news[index].score
+    func scoreLabel(at index: Int) -> String {
+        return "\(news[index].score) points"
     }
     
     func authorLabel(at index: Int) -> String {
@@ -80,11 +80,12 @@ class HackerNewsListViewModel {
     }
     
     
-    func fetchNews(endpoint: String) {
+    func fetchNews(endpoint: String, get: Int = 50) {
         self.getNews(endpoint: endpoint) { news in
             let count = news.count
-            //for x in 0...count - 1 {
-            for x in 0...25 {
+            guard get < count else { return }
+            print(count)
+            for x in 0...get {
                 self.getItem(item: news[x] as! Int) { _ in
                     //
                 }

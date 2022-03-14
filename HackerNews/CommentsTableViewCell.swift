@@ -9,7 +9,6 @@ import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
 
-    
     func makeLabel(size: CGFloat? = 15, color: UIColor? = .systemGray, numberOfLines: Int = 1, textAlignment: NSTextAlignment = .left) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -44,7 +44,6 @@ class NewsListView: UIView {
     
     init() {
         super.init(frame: .zero)
-        //self.viewModel.fetchNews()
         setupView()
     }
     
@@ -100,8 +99,8 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.reuseID, for: indexPath) as? NewsTableViewCell
         cell?.titleLabel.text = viewModel.title(at: indexPath.row)
         cell?.urlLabel.text = viewModel.urlLabel(at: indexPath.row)
-        cell?.scoreLabel.text = "\(String(viewModel.scoreLabel(at: indexPath.row))) points"
-        cell?.timeLabel.text = "\(viewModel.timeLabel(at: indexPath.row))"
+        cell?.scoreLabel.text = viewModel.scoreLabel(at: indexPath.row)
+        cell?.timeLabel.text = viewModel.timeLabel(at: indexPath.row)
         cell?.commentLabel.text = viewModel.typeLabel(at: indexPath.row)
 
         return cell ?? UITableViewCell()
