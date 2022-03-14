@@ -47,6 +47,10 @@ class HackerNewsListViewModel {
         return news[index].by
     }
     
+    func typeLabel(at index: Int) -> String {
+        return "\(news[index].kids.count) comments"
+    }
+    
     func timeLabel(at index: Int) -> String {
         let time = "\(news[index].time)"
         return setTimestamp(epochTime: time)

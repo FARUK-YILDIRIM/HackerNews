@@ -76,7 +76,7 @@ extension NewsListView: HackerNewsListViewModelDelegate {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
-        }     
+        }
     }
 }
 
@@ -96,8 +96,8 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
         cell?.titleLabel.text = viewModel.title(at: indexPath.row)
         cell?.urlLabel.text = viewModel.urlLabel(at: indexPath.row)
         cell?.scoreLabel.text = "\(String(viewModel.scoreLabel(at: indexPath.row))) points"
-        cell?.authorLabel.text = "by \(viewModel.authorLabel(at: indexPath.row))"
         cell?.timeLabel.text = "\(viewModel.timeLabel(at: indexPath.row))"
+        cell?.commentLabel.text = viewModel.typeLabel(at: indexPath.row)
 
         return cell ?? UITableViewCell()
         
@@ -111,5 +111,4 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
         
         delegate?.didButtonTapped(url: news)
     }
-   
 }

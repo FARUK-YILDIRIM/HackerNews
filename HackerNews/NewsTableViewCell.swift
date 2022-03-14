@@ -12,67 +12,29 @@ class NewsTableViewCell: UITableViewCell {
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.alignment = .leading
         stackView.spacing = 5
         return stackView
     }()
+     
+    func makeLabel(size: CGFloat? = 15, color: UIColor? = .systemGray, numberOfLines: Int = 1) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = color!
+        label.font = UIFont.systemFont(ofSize: size!)
+        label.numberOfLines = numberOfLines
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }
     
-    lazy var titleLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.numberOfLines = 0
-        v.textAlignment = .left
-        v.textColor = .black
-        v.font = UIFont.systemFont(ofSize: 20)
-        v.adjustsFontSizeToFitWidth = true
-        return v
-    }()
-    
-    lazy var urlLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.numberOfLines = 1
-        v.textAlignment = .left
-        v.textColor = .systemBlue
-        v.font = UIFont.systemFont(ofSize: 11)
-        v.adjustsFontSizeToFitWidth = true
-        return v
-    }()
-    
-    lazy var scoreLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.numberOfLines = 1
-        v.textAlignment = .left
-        v.textColor = .systemGray
-        v.font = UIFont.systemFont(ofSize: 15)
-        v.adjustsFontSizeToFitWidth = true
-        return v
-    }()
-    
-    lazy var authorLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.numberOfLines = 1
-        v.textAlignment = .left
-        v.textColor = .gray
-        v.font = UIFont.systemFont(ofSize: 15)
-        v.adjustsFontSizeToFitWidth = true
-        return v
-    }()
-    
-    lazy var timeLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.numberOfLines = 1
-        v.textAlignment = .left
-        v.textColor = .gray
-        v.font = UIFont.systemFont(ofSize: 15)
-        v.adjustsFontSizeToFitWidth = true
-        return v
-    }()
+    lazy var titleLabel = makeLabel(size: 20, color: .label, numberOfLines: 0)
+    lazy var urlLabel = makeLabel(size: 12, color: .link)
+    lazy var scoreLabel = makeLabel()
+    lazy var authorLabel = makeLabel()
+    lazy var timeLabel = makeLabel()
+    lazy var commentLabel = makeLabel()
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -93,7 +55,8 @@ class NewsTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(scoreLabel)
         stackView.addArrangedSubview(timeLabel)
         stackView.addArrangedSubview(authorLabel)
- 
+        stackView.addArrangedSubview(commentLabel)
+
         setupConstraints()
     }
     
@@ -103,7 +66,6 @@ class NewsTableViewCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint (equalTo: trailingAnchor),
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            //titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
         // url
@@ -116,7 +78,6 @@ class NewsTableViewCell: UITableViewCell {
         // stack view
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            stackView.trailingAnchor.constraint (equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
         
