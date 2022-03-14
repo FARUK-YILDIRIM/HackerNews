@@ -84,7 +84,6 @@ class HackerNewsListViewModel {
         self.getNews(endpoint: endpoint) { news in
             let count = news.count
             guard get < count else { return }
-            print(count)
             for x in 0...get {
                 self.getItem(item: news[x] as! Int) { _ in
                     //

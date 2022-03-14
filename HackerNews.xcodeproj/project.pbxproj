@@ -74,80 +74,80 @@
 		034A1DB027D2234800CEE057 /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
-				03B32D3B27DF7CC100E7A83F /* Models */,
-				03B32D3C27DF7CE000E7A83F /* Views */,
-				03B32D3D27DF7CF900E7A83F /* ViewModels */,
-				03B32D3E27DF7D0A00E7A83F /* ViewControllers */,
-				03B32D3F27DF7D1900E7A83F /* Networking */,
-				03B32D4027DF7D2900E7A83F /* Main */,
-				03B32D4127DF7D4300E7A83F /* SupportFiles */,
+				03B32D4227DF7EC500E7A83F /* Models */,
+				03B32D4927DF7F5900E7A83F /* Views */,
+				03B32D4B27DF7F7A00E7A83F /* ViewModels */,
+				03B32D4827DF7F3A00E7A83F /* ViewControllers */,
+				03B32D4527DF7F0600E7A83F /* Networking */,
+				03B32D4427DF7EF400E7A83F /* SupportFiles */,
+				03B32D4327DF7EE000E7A83F /* Main */,
 			);
 			path = HackerNews;
 			sourceTree = "<group>";
 		};
-		03B32D3B27DF7CC100E7A83F /* Models */ = {
+		03B32D4227DF7EC500E7A83F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				038A5ECC27D89F30003F782D /* Item.swift */,
 				03B32D3427DF236000E7A83F /* Comment.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		03B32D3C27DF7CE000E7A83F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				038A5ED427D8F261003F782D /* NewsTableViewCell.swift */,
-				038A5ED627D8FB78003F782D /* NewsListView.swift */,
-				03B32D3627DF37C300E7A83F /* CommentsTableViewCell.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		03B32D3D27DF7CF900E7A83F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				038A5ED027D8BB95003F782D /* HackerNewsListViewModel.swift */,
-			);
-			name = ViewModels;
-			sourceTree = "<group>";
-		};
-		03B32D3E27DF7D0A00E7A83F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				034A1DB527D2234800CEE057 /* NewsViewController.swift */,
-				03B32D3027DF101100E7A83F /* CommentsViewController.swift */,
-				034F804727DA7C6200E429F1 /* TabBarViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		03B32D3F27DF7D1900E7A83F /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				038A5ECA27D88B25003F782D /* NetworkManager.swift */,
-				038A5ECE27D8A6CE003F782D /* EndPoint.swift */,
-			);
-			name = Networking;
-			sourceTree = "<group>";
-		};
-		03B32D4027DF7D2900E7A83F /* Main */ = {
+		03B32D4327DF7EE000E7A83F /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				034A1DB127D2234800CEE057 /* AppDelegate.swift */,
 				034A1DB327D2234800CEE057 /* SceneDelegate.swift */,
 			);
-			name = Main;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		03B32D4127DF7D4300E7A83F /* SupportFiles */ = {
+		03B32D4427DF7EF400E7A83F /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				034A1DBA27D2234900CEE057 /* Assets.xcassets */,
 				034A1DBC27D2234900CEE057 /* LaunchScreen.storyboard */,
 				034A1DBF27D2234900CEE057 /* Info.plist */,
 			);
-			name = SupportFiles;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		03B32D4527DF7F0600E7A83F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				038A5ECA27D88B25003F782D /* NetworkManager.swift */,
+				038A5ECE27D8A6CE003F782D /* EndPoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		03B32D4827DF7F3A00E7A83F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				034A1DB527D2234800CEE057 /* NewsViewController.swift */,
+				03B32D3027DF101100E7A83F /* CommentsViewController.swift */,
+				034F804727DA7C6200E429F1 /* TabBarViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03B32D4927DF7F5900E7A83F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				038A5ED427D8F261003F782D /* NewsTableViewCell.swift */,
+				038A5ED627D8FB78003F782D /* NewsListView.swift */,
+				03B32D3627DF37C300E7A83F /* CommentsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03B32D4B27DF7F7A00E7A83F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				038A5ED027D8BB95003F782D /* HackerNewsListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +375,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3CADSS82Y2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HackerNews/Info.plist;
+				INFOPLIST_FILE = HackerNews/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -402,7 +402,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3CADSS82Y2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HackerNews/Info.plist;
+				INFOPLIST_FILE = HackerNews/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
