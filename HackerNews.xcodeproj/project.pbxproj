@@ -19,6 +19,8 @@
 		038A5ED127D8BB95003F782D /* HackerNewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A5ED027D8BB95003F782D /* HackerNewsListViewModel.swift */; };
 		038A5ED527D8F261003F782D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A5ED427D8F261003F782D /* NewsTableViewCell.swift */; };
 		038A5ED727D8FB78003F782D /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A5ED627D8FB78003F782D /* NewsListView.swift */; };
+		03B32D3127DF101100E7A83F /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B32D3027DF101100E7A83F /* CommentsViewController.swift */; };
+		03B32D3527DF236000E7A83F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B32D3427DF236000E7A83F /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		038A5ED027D8BB95003F782D /* HackerNewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsListViewModel.swift; sourceTree = "<group>"; };
 		038A5ED427D8F261003F782D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		038A5ED627D8FB78003F782D /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		03B32D3027DF101100E7A83F /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		03B32D3427DF236000E7A83F /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				038A5ECC27D89F30003F782D /* Item.swift */,
+				03B32D3427DF236000E7A83F /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				034A1DB527D2234800CEE057 /* NewsViewController.swift */,
+				03B32D3027DF101100E7A83F /* CommentsViewController.swift */,
 				034F804727DA7C6200E429F1 /* TabBarViewController.swift */,
 			);
 			name = ViewControllers;
@@ -213,10 +219,12 @@
 			files = (
 				038A5ECD27D89F30003F782D /* Item.swift in Sources */,
 				038A5ECB27D88B25003F782D /* NetworkManager.swift in Sources */,
+				03B32D3127DF101100E7A83F /* CommentsViewController.swift in Sources */,
 				038A5ED127D8BB95003F782D /* HackerNewsListViewModel.swift in Sources */,
 				034A1DB627D2234800CEE057 /* NewsViewController.swift in Sources */,
 				034A1DB227D2234800CEE057 /* AppDelegate.swift in Sources */,
 				038A5ECF27D8A6CE003F782D /* EndPoint.swift in Sources */,
+				03B32D3527DF236000E7A83F /* Comment.swift in Sources */,
 				038A5ED727D8FB78003F782D /* NewsListView.swift in Sources */,
 				034A1DB427D2234800CEE057 /* SceneDelegate.swift in Sources */,
 				034F804827DA7C6200E429F1 /* TabBarViewController.swift in Sources */,

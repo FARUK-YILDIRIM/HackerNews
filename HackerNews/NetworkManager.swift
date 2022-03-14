@@ -52,4 +52,23 @@ final class NetworkManager {
         
     }
     
+    func getComment (item: Int, completion: @escaping (Comment?) -> Void) {
+        let urlString = endpoint.getItem(item)
+        guard let url = URL (string: urlString) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil, let data = data else {
+                completion(nil)
+                return
+            }
+
+            let item = try? JSONDecoder().decode (Comment.self, from: data)
+            item == nil ? completion(nil): completion (item.self)
+
+        }.resume()
+        
+    }
+    
 }

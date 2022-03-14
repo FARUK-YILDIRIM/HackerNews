@@ -17,6 +17,7 @@ class NewsViewController: UIViewController {
         let v = NewsListView()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.delegate = self
+        v.commentsDelegate = self
         return v
     }()
     
@@ -69,5 +70,16 @@ extension NewsViewController: TabDelegate {
             self.present(safariViewController, animated: true)
         }
         
+    }
+}
+
+
+extension NewsViewController: CommentsDelegate {
+    func didCommentButtonTapped(title: String, comments: [Int]) {
+        let addCommentsViewController = CommentsViewController()
+         addCommentsViewController.newsTitle = title
+         addCommentsViewController.comments = comments
+        
+         self.present(addCommentsViewController, animated: true, completion: nil)
     }
 }

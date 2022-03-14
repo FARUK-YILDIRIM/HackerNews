@@ -11,9 +11,14 @@ protocol TabDelegate {
     func didButtonTapped(url: String)
 }
 
+protocol CommentsDelegate {
+    func didCommentButtonTapped(title: String, comments: [Int])
+}
+
 class NewsListView: UIView {
 
     var delegate: TabDelegate?
+    var commentsDelegate: CommentsDelegate?
     
     lazy var viewModel: HackerNewsListViewModel = {
         let viewModel = HackerNewsListViewModel()
@@ -111,4 +116,36 @@ extension NewsListView: UITableViewDelegate, UITableViewDataSource {
         
         delegate?.didButtonTapped(url: news)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+          let action = UIContextualAction(style: .normal,
+                                          title: "comments") { [weak self] (action, view, completionHandler) in
+              self?.handleComments(index: indexPath.row)
+              completionHandler(true)
+          }
+        
+          action.image = UIImage(systemName: "text.bubble")
+          action.backgroundColor = .systemOrange
+          
+          return UISwipeActionsConfiguration(actions: [action])
+      }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+          let action = UIContextualAction(style: .normal,
+                                          title: "comments") { [weak self] (action, view, completionHandler) in
+              self?.handleComments(index: indexPath.row)
+              completionHandler(true)
+          }
+        
+          action.image = UIImage(systemName: "text.bubble")
+          action.backgroundColor = .systemOrange
+          
+          return UISwipeActionsConfiguration(actions: [action])
+      }
+      
+    private func handleComments(index: Int) {
+        commentsDelegate?.didCommentButtonTapped(title: viewModel.title(at: index), comments: viewModel.getComments(at: index))
+      }
+
+   
 }

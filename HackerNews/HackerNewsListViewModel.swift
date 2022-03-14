@@ -56,6 +56,10 @@ class HackerNewsListViewModel {
         return setTimestamp(epochTime: time)
     }
     
+    func getComments(at index: Int) -> [Int] {
+        return news[index].kids
+    }
+    
     func getNews(endpoint: String, completion: @escaping ([Any]) -> Void){
         NetworkManager.share.getNews(endpoint: endpoint) { news in
             guard let news = news else { return }
@@ -73,7 +77,6 @@ class HackerNewsListViewModel {
                 completion(item)
             }
         }
-        
     }
     
     
